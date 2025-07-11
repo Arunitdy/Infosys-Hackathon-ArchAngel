@@ -112,6 +112,7 @@ const SignUp = ({ setUserData }) => {
 
             <div className="form-group">
               <label className="form-label" htmlFor="password">Password</label>
+              
               <input
                 className="form-input"
                 id="password"
@@ -120,6 +121,7 @@ const SignUp = ({ setUserData }) => {
                 onChange={(e) => setPassword(e.target.value)}
                 required
               />
+
               <div className="password-checkbox">
                 <input
                   type="checkbox"
