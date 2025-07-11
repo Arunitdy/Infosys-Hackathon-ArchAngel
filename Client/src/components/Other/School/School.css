@@ -1,0 +1,83 @@
+.school-wrapper {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f0f9ff;
+  flex-direction: row;
+}
+
+.school-left {
+  flex: 1;
+  padding: 3rem 2rem;
+  background-color: #e0f2fe;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.school-heading {
+  font-size: 2rem;
+  color: #0c4a6e;
+  margin-bottom: 1rem;
+}
+
+.school-description {
+  font-size: 1.1rem;
+  color: #0f172a;
+  text-align: center;
+  max-width: 400px;
+}
+
+.school-animation {
+  margin-top: 2rem;
+  width: 100%;
+  max-width: 400px;
+  height: 300px;
+  border: none;
+}
+
+.school-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+}
+
+.school-content {
+  max-width: 400px;
+  padding: 2rem;
+  text-align: center;
+}
+
+.school-title {
+  font-size: 2rem;
+  color: #0c4a6e;
+}
+
+.school-subtitle {
+  font-size: 1.25rem;
+  margin: 1rem 0;
+  color: #1e293b;
+}
+
+.school-info {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  color: #334155;
+}
+
+.school-button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  background-color: #0ea5e9;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.school-button:hover {
+  background-color: #0284c7;
+}

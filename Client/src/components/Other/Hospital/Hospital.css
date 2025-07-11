@@ -1,0 +1,71 @@
+.hospital-wrapper {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f5faff;
+}
+
+.hospital-left {
+  flex: 1;
+  padding: 3rem 2rem;
+  background-color: #e6f0ff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hospital-heading {
+  font-size: 2rem;
+  color: #1e40af;
+}
+
+.hospital-description {
+  font-size: 1.1rem;
+  margin-top: 1rem;
+}
+
+.hospital-animation {
+  margin-top: 2rem;
+  width: 100%;
+  max-width: 400px;
+  height: 300px;
+  border: none;
+}
+
+.hospital-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+}
+
+.hospital-content {
+  max-width: 400px;
+  padding: 2rem;
+  text-align: center;
+}
+
+.hospital-title {
+  font-size: 2rem;
+  color: #1e40af;
+}
+
+.hospital-subtitle {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.hospital-info {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.hospital-button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  background-color: #1e40af;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
