@@ -1,16 +1,19 @@
-import { useState } from 'react'
-import Home from "./components/Home/Home";
-import LoginPage from "./components/Login/Login";
-import './App.css'
+import { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import LoginPage from './components/Login/Login';
+import Home from './components/Home/Home';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [userData, setUserData] = useState(null); // <-- Shared user data
 
   return (
-    <>
-     <LoginPage/>
-    </>
-  )
+    <Router>
+      <Routes>
+        <Route path="/" element={<LoginPage setUserData={setUserData} />} />
+        <Route path="/home" element={<Home userData={userData} />} />
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;

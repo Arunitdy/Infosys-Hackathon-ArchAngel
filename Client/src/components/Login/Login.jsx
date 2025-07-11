@@ -1,27 +1,48 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import "./Login.css";
 
-
-export function LoginPage({ onLoginSuccess }) {
+export function LoginPage({ setUserData }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [isLogin, setIsLogin] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
-  const [showForgotPassword, setShowForgotPassword] = useState(false);
 
-  const handleSubmit = () => {
-    alert("Login functionality is not implemented yet.");
-  }
+  const navigate = useNavigate();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsLoading(true);
+
+    try {
+      const res = await fetch("http://localhost:5000/api/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password }),
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        setUserData(data.user);              // Save user data in App
+        navigate("/home");                   // Navigate to Home
+      } else {
+        alert("Invalid credentials.");
+      }
+    } catch (error) {
+      console.error("Login error:", error);
+      alert("Something went wrong.");
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   const handleGoogleSignIn = () => {
-    alert("Google Sign-In functionality is not implemented yet.");
-    }
-    
-  const handleForgotPassword = () => {
-    setShowForgotPassword(true);
+    alert("Google Sign-In not implemented");
   };
 
   return (
@@ -35,12 +56,10 @@ export function LoginPage({ onLoginSuccess }) {
             <div className="form-group">
               <label className="form-label" htmlFor="email">Email address</label>
               <input
-                className="form-input emailtest"
-                placeholder="123456@tkmce.ac.in"
+                className="form-input"
                 id="email"
                 name="email"
                 type="email"
-                autoComplete="email"
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -50,12 +69,10 @@ export function LoginPage({ onLoginSuccess }) {
             <div className="form-group">
               <label className="form-label" htmlFor="password">Password</label>
               <input
-                className="form-input passwordtest"
-                placeholder="Password"
+                className="form-input"
                 id="password"
                 name="password"
                 type={showPassword ? "text" : "password"}
-                autoComplete="current-password"
                 required
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
@@ -70,25 +87,15 @@ export function LoginPage({ onLoginSuccess }) {
                 <label htmlFor="show-password">Show Password</label>
               </div>
             </div>
-                        
+
             <div className="form-footer">
-              {isLogin && (
-                <>
-                  <a href="#" onClick={handleForgotPassword} className="forgot-password">
-                    Forgot your password?
-                  </a>
-                  {showForgotPassword && (
-                    <ForgotPassword 
-                      onClose={() => setShowForgotPassword(false)} 
-                      initialEmail={email} 
-                    />
-                  )}
-                </>
-              )}
+              <a href="#" onClick={() => alert("Forgot password")} className="forgot-password">
+                Forgot your password?
+              </a>
             </div>
 
-            <button className="submit-button loginbuttontest" type="submit" disabled={isLoading}>
-              {isLoading ? "Processing..." : isLogin ? "Sign in" : "Register"}
+            <button className="submit-button" type="submit" disabled={isLoading}>
+              {isLoading ? "Processing..." : "Sign in"}
             </button>
           </form>
 
@@ -106,4 +113,4 @@ export function LoginPage({ onLoginSuccess }) {
   );
 }
 
-export default LoginPage; 
+export default LoginPage;
