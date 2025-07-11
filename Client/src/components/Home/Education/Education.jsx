@@ -52,4 +52,4 @@ const Education = () => {
   );
 };
 
-export default CreditTransfer;
+export default Education;

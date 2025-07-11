@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Documents.css";
+import "./Document.css";
 import { FiPlus } from "react-icons/fi";
 
 const Documents = () => {

@@ -4,11 +4,11 @@ import { FiMenu, FiUser, FiX } from "react-icons/fi";
 import "./Home.css";
 
 const options = [
-  { name: "Migration Service", icon: "🌍" },
-  { name: "Medical", icon: "🏥" },
-  { name: "Education", icon: "💸" },
-  { name: "Documents", icon: "📝" },
-  { name: "Legal Help", icon: "⚖️" },
+  { name: "Migration Service", icon: "🌍", route: "/migration" }, // Optional future use
+  { name: "Medical", icon: "🏥", route: "/medical" },
+  { name: "Education", icon: "💸", route: "/education" },
+  { name: "Documents", icon: "📝", route: "/documents" },
+  { name: "Legal Help", icon: "⚖️", route: "/services" }, // You may route this to your services page
 ];
 
 const testMenuItems = [
@@ -18,9 +18,9 @@ const testMenuItems = [
   "Help",
 ];
 
-const Home = () => {
-  //const navigate = useNavigate();
+const Home = ({ userData }) => {
   const [showMenu, setShowMenu] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <div className="home-container">
@@ -60,7 +60,11 @@ const Home = () => {
       {/* Services Grid */}
       <div className="grid-container">
         {options.map((option, index) => (
-          <div key={index} className="grid-item">
+          <div
+            key={index}
+            className="grid-item"
+            onClick={() => navigate(option.route)}
+          >
             <div className="grid-icon">{option.icon}</div>
             <div className="grid-label">{option.name}</div>
           </div>
