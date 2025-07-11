@@ -107,6 +107,10 @@ export function LoginPage({ setUserData }) {
             <FcGoogle className="google-icon" />
             Sign in with Google
           </button>
+            <div className="signup-link">
+                <span>Don't have an account? </span>
+                <a href="/signup" className="signup-link-text">Sign up</a>
+            </div>
         </div>
       </div>
     </div>
