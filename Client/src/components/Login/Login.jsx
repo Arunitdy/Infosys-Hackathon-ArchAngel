@@ -47,7 +47,16 @@ export function LoginPage({ setUserData }) {
   };
 
   return (
+    
     <div className="login-container">
+    <div className="login-wrapper">
+     {/* Left section with headline or image */}
+    <div className="login-left">
+      <h1>Welcome to ArchAngel</h1>
+      <p>Register to access services for migrants and service providers.</p>
+      {/* Optionally insert an image or animation here */}
+      <img src="https://lottie.host/4cc98737-d71e-4e69-922a-c653b4776f58/WJvNUw9WzL.lottie" alt="Animated Support" />
+    </div>
       <div className="login-content">
         <h1 className="login-title">Infosys-Hackathon-ArchAngel</h1>
         <h2 className="login-subtitle">Sign in to your account</h2>
@@ -112,6 +121,7 @@ export function LoginPage({ setUserData }) {
                 <a href="/signup" className="signup-link-text">Sign up</a>
             </div>
         </div>
+      </div>
       </div>
     </div>
   );
