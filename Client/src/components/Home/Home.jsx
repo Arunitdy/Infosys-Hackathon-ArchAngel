@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect  } from "react";
 import { useNavigate } from "react-router-dom";
 import { FiMenu, FiUser, FiX } from "react-icons/fi";
 import { FaGlobe, FaHospital, FaGraduationCap, FaFileAlt, FaBalanceScale } from "react-icons/fa";
@@ -23,7 +23,23 @@ const testMenuItems = [
 
 const Home = ({ userData }) => {
   const [showMenu, setShowMenu] = useState(false);
+  const [animatedText, setAnimatedText] = useState("");
+
   const navigate = useNavigate();
+
+  const fullText =
+    "MigrantLink is a portable digital platform empowering India's 450 million migrant workers with seamless access to essential services across state borders. It consolidates documents like Aadhaar, health records, and ration cards into a secure digital wallet, ensuring benefits follow workers wherever they go.";
+
+  useEffect(() => {
+    let index = 0;
+    const interval = setInterval(() => {
+      setAnimatedText(fullText.slice(0, index + 1));
+      index++;
+      if (index === fullText.length) clearInterval(interval);
+    }, 30); // typing speed
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className="home-container">
@@ -54,17 +70,22 @@ const Home = ({ userData }) => {
           ))}
         </ul>
       </div>
-        <div className="hero-image">
-            <div className="hero-text">
-                <h1>Welcome to ArchAngel</h1>
-                <p>Connecting migrants to essential services with care and efficiency.</p>
-            </div>
-            <div className="hero-animation">
-                <iframe src="https://lottie.host/embed/a1bdbb34-56b3-4ba0-bd9f-1f56382e7306/fci9LzDCGH.lottie"></iframe>
-            </div>
+         {/* Hero Section */}
+      <div className="hero-image">
+        <div className="hero-text">
+          <h1>Welcome to MigrantLink</h1>
+          <p className="tagline">Your rights, wherever you work.</p>
+          <p className="animated-description">{animatedText}</p>
+          
         </div>
 
-
+        <div className="hero-animation">
+          <iframe
+            src="https://lottie.host/embed/a1bdbb34-56b3-4ba0-bd9f-1f56382e7306/fci9LzDCGH.lottie"
+            title="Migrant Animation"
+          ></iframe>
+        </div>
+      </div>
       {/* Services Grid */}
       <div className="grid-container">
         {options.map((option, index) => (
