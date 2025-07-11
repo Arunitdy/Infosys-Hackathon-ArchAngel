@@ -11,6 +11,7 @@ import Documents from './components/Home/Document/Document';
 import Services from './components/Home/Serevice/Serevice';
 import SchoolHome from './components/Other/School/School';
 import HospitalHome from './components/Other/Hospital/Hospital';
+import Govt from './components/Other/Govt/Govt';
 
 function App() {
   const [userData, setUserData] = useState(null);
@@ -28,6 +29,7 @@ function App() {
         <Route path="/services" element={<Services userData={userData} />} />
         <Route path="/school" element={<SchoolHome />} />
         <Route path="/hospital" element={<HospitalHome />} />
+        <Route path="/govt" element={<Govt />} />
         <Route path="/test" element={<TestPage />} />
       </Routes>
     </Router>
