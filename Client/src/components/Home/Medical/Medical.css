@@ -1,75 +1,95 @@
-.medical-container {
+.medical-page {
   display: flex;
   flex-direction: row;
-  height: 100vh;
+  justify-content: space-between;
   padding: 2rem;
   gap: 2rem;
-  background-color: #f4f6f8;
-  box-sizing: border-box;
+  min-height: 100vh;
+  background-color: #f9f9f9;
+  font-family: Arial, sans-serif;
 }
 
-.medical-left,
-.medical-right {
+/* Sections */
+.left-section,
+.right-section {
   flex: 1;
-  background-color: #fff;
-  border-radius: 10px;
+  background: white;
   padding: 1.5rem;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  overflow-y: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
-.medical-left h2,
-.medical-right h2 {
-  font-size: 1.5rem;
+/* Section titles */
+.left-section h2,
+.right-section h2 {
   margin-bottom: 1rem;
-  color: #007bff;
+  color: #333;
+  font-size: 1.5rem;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 0.5rem;
 }
 
-.medical-history {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+/* Lists */
+.left-section ul,
+.right-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.medical-history-item {
+/* List items */
+.left-section li,
+.right-section li {
   padding: 1rem;
-  border: 1px solid #ddd;
+  margin-bottom: 1rem;
+  border: 1px solid #e0e0e0;
   border-radius: 8px;
-  background-color: #fafafa;
-}
-
-.hospital-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.hospital-card {
-  padding: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  background-color: #fff;
+  background: #fafafa;
+}/* Wrap each hospital entry in a flex container */
+.right-section li {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background: #fafafa;
 }
 
-.hospital-card button {
-  background-color: #28a745;
-  border: none;
+/* Ensure text stays aligned to left */
+.right-section li span {
+  flex: 1;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Button stays on the right */
+.right-section button {
+  margin-left: auto;
+  padding: 0.5rem 1rem;
+  background-color: #4caf50;
   color: white;
-  padding: 0.6rem 1.2rem;
-  border-radius: 5px;
+  border: none;
+  border-radius: 6px;
   cursor: pointer;
-  font-weight: bold;
+  transition: background-color 0.2s ease;
 }
 
-.hospital-card button:hover {
-  background-color: #218838;
+.right-section button:hover {
+  background-color: #388e3c;
 }
 
+
+/* Responsive for mobile */
 @media (max-width: 768px) {
-  .medical-container {
+  .medical-page {
     flex-direction: column;
+    padding: 1rem;
+  }
+
+  .left-section,
+  .right-section {
+    margin-bottom: 1.5rem;
   }
 }
