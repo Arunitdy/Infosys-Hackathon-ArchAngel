@@ -12,6 +12,9 @@ const TestPage = () => {
     { label: "Dashboard", path: "/dashboard" },
     { label: "Settings", path: "/settings" },
     { label: "Help", path: "/help" },
+    { label: "schoole", path: "/school" },
+    { label: "hospital", path: "/hospital" },
+    
   ];
 
   return (
