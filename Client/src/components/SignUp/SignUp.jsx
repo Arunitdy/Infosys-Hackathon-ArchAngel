@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { FiUser, FiBriefcase } from "react-icons/fi";
 import "./SignUp.css";
 
+
 const SignUp = ({ setUserData }) => {
   const [role, setRole] = useState("migrant");
   const [formData, setFormData] = useState({
