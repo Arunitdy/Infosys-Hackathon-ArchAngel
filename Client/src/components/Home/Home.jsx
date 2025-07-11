@@ -51,11 +51,16 @@ const Home = ({ userData }) => {
           ))}
         </ul>
       </div>
+        <div className="hero-image">
+            <div className="hero-text">
+                <h1>Welcome to ArchAngel</h1>
+                <p>Connecting migrants to essential services with care and efficiency.</p>
+            </div>
+            <div className="hero-animation">
+                <iframe src="https://lottie.host/embed/a1bdbb34-56b3-4ba0-bd9f-1f56382e7306/fci9LzDCGH.lottie"></iframe>
+            </div>
+        </div>
 
-      {/* Hero Image */}
-      <div className="hero-image">
-        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" alt="Country" />
-      </div>
 
       {/* Services Grid */}
       <div className="grid-container">

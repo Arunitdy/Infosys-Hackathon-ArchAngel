@@ -2,7 +2,6 @@
 
 .home-container {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f4f4f4;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -14,7 +13,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  background-color: #1f2937;
+  background-color: #2174d4;
   color: white;
 }
 
@@ -26,12 +25,48 @@
 }
 
 /* Hero Image */
-.hero-image img {
+.hero-image {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.hero-text {
+  flex: 1;
+  min-width: 280px;
+  max-width: 600px;
+}
+
+.hero-text h1 {
+  font-size: 32px;
+  margin-bottom: 12px;
+  color: #2174d4;
+}
+
+.hero-text p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.hero-animation {
+  flex: 1;
+  min-width: 280px;
+  max-width: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-animation iframe {
   width: 100%;
   height: auto;
-  max-height: 300px;
-  object-fit: cover;
+  min-height: 300px;
+  border: none;
 }
+
 
 /* Grid Container */
 .grid-container {
@@ -138,6 +173,14 @@
 
 /* Responsive tweaks */
 @media (max-width: 480px) {
+    
+/* Hero Image */
+.hero-image iframe {
+  width: 100%;
+  height: auto;
+  min-height: 300px;
+  object-fit: cover;
+}
   .grid-label {
     font-size: 0.85rem;
   }
