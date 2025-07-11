@@ -1,71 +1,140 @@
-.hospital-wrapper {
-  display: flex;
+.hospital-home-wrapper {
+  font-family: "Segoe UI", sans-serif;
+  padding: 1rem;
+  background: linear-gradient(to right, #fff8f8, #f0faff);
   min-height: 100vh;
-  background-color: #f5faff;
 }
 
-.hospital-left {
-  flex: 1;
-  padding: 3rem 2rem;
-  background-color: #e6f0ff;
+.hospital-navbar {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.hospital-heading {
-  font-size: 2rem;
-  color: #1e40af;
-}
-
-.hospital-description {
-  font-size: 1.1rem;
-  margin-top: 1rem;
-}
-
-.hospital-animation {
-  margin-top: 2rem;
-  width: 100%;
-  max-width: 400px;
-  height: 300px;
-  border: none;
-}
-
-.hospital-right {
-  flex: 1;
-  display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  background: #ffffff;
+  background-color: #1a73e8;
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
 }
 
-.hospital-content {
-  max-width: 400px;
-  padding: 2rem;
-  text-align: center;
+.icon-button {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
 }
 
-.hospital-title {
-  font-size: 2rem;
-  color: #1e40af;
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 9;
 }
 
-.hospital-subtitle {
-  font-size: 1.25rem;
+.sidebar-menu {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 220px;
+  height: 100%;
+  background-color: white;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.2);
+  transition: left 0.3s ease-in-out;
+  z-index: 10;
+  padding: 1rem;
+}
+
+.sidebar-menu.open {
+  left: 0;
+}
+
+.menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
   margin-bottom: 1rem;
 }
 
-.hospital-info {
-  font-size: 1rem;
-  margin-bottom: 1.5rem;
+.sidebar-menu ul {
+  list-style: none;
+  padding: 0;
 }
 
-.hospital-button {
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  background-color: #1e40af;
-  color: #fff;
-  border: none;
-  border-radius: 6px;
+.sidebar-menu ul li {
+  padding: 0.75rem 0;
   cursor: pointer;
+  color: #333;
+  transition: background 0.2s;
+}
+
+.sidebar-menu ul li:hover {
+  background-color: #f0f0f0;
+}
+
+.hospital-hero {
+  text-align: center;
+  margin: 2rem 0 1rem;
+}
+
+.hospital-hero h1 {
+  font-size: 2rem;
+  color: #b71c1c;
+}
+
+.hospital-hero p {
+  color: #555;
+  font-size: 1.1rem;
+}
+
+.hospital-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.2rem;
+  margin-top: 2rem;
+}
+
+.hospital-card {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.hospital-card:hover {
+  transform: translateY(-4px);
+}
+
+.card-icon {
+  font-size: 2rem;
+  color: #1a73e8;
+  margin-bottom: 0.8rem;
+}
+
+.card-label {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .hospital-navbar h2 {
+    font-size: 1.1rem;
+  }
+
+  .hospital-card {
+    padding: 1rem;
+  }
+
+  .card-icon {
+    font-size: 1.5rem;
+  }
+
+  .card-label {
+    font-size: 1rem;
+  }
 }
