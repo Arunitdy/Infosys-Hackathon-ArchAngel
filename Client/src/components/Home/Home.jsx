@@ -1,15 +1,18 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FiMenu, FiUser, FiX } from "react-icons/fi";
+import { FaGlobe, FaHospital, FaGraduationCap, FaFileAlt, FaBalanceScale } from "react-icons/fa";
+
 import "./Home.css";
 
 const options = [
-  { name: "Migration Service", icon: "🌍", route: "/migration" }, // Optional future use
-  { name: "Medical", icon: "🏥", route: "/medical" },
-  { name: "Education", icon: "💸", route: "/education" },
-  { name: "Documents", icon: "📝", route: "/documents" },
-  { name: "Legal Help", icon: "⚖️", route: "/services" }, // You may route this to your services page
+  { name: "Migration Service", icon: <FaGlobe />, route: "/migration" },
+  { name: "Medical", icon: <FaHospital />, route: "/medical" },
+  { name: "Education", icon: <FaGraduationCap />, route: "/education" },
+  { name: "Documents", icon: <FaFileAlt />, route: "/documents" },
+  { name: "Legal Help", icon: <FaBalanceScale />, route: "/services" },
 ];
+
 
 const testMenuItems = [
   "Dashboard",

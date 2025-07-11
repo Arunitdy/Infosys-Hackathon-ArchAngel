@@ -77,13 +77,14 @@
 }
 
 .grid-item {
-  background-color: white;
+  background-color: #2174d4;
   border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 6px 4px rgba(0,0,0,0.1);
   padding: 1rem;
   text-align: center;
   transition: transform 0.2s ease;
   cursor: pointer;
+  border: 2px solid rgb(255, 255, 255);
 }
 
 .grid-item:hover {
@@ -92,12 +93,13 @@
 
 .grid-icon {
   font-size: 2rem;
+  color: #ffffff;
   margin-bottom: 0.5rem;
 }
 
 .grid-label {
   font-weight: 600;
-  color: #111827;
+  color: #ffffff;
   font-size: 0.95rem;
 }
 
