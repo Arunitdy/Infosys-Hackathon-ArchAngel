@@ -68,7 +68,7 @@ const SignUp = ({ setUserData }) => {
       <h1>Welcome to ArchAngel</h1>
       <p>Register to access services for migrants and service providers.</p>
       {/* Optionally insert an image or animation here */}
-      <img src="https://arkca.com/assets/img/login.gif" alt="Animated Support" />
+      <img src="login.gif" alt="Animated Support" />
     </div>
       <div className="login-content">
         <h1 className="login-title"></h1>
