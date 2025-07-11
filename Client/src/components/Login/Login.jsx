@@ -66,7 +66,6 @@ export function LoginPage({ setUserData }) {
                 onChange={(e) => setEmail(e.target.value)}
               />
             </div>
-
             <div className="form-group">
               <label className="form-label" htmlFor="password">Password</label>
               <input
