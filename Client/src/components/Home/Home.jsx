@@ -6,7 +6,7 @@ import "./Home.css";
 const options = [
   { name: "Migration Service", icon: "🌍" },
   { name: "Medical", icon: "🏥" },
-  { name: "Money Transfer", icon: "💸" },
+  { name: "Education", icon: "💸" },
   { name: "File Reports", icon: "📝" },
   { name: "Legal Help", icon: "⚖️" },
   { name: "Language Support", icon: "🗣️" },
