@@ -4,6 +4,8 @@ import LoginPage from './components/Login/Login';
 import SignUp from './components/Signup/Signup';
 import Home from './components/Home/Home';
 
+import './App.css';
+
 function App() {
   const [userData, setUserData] = useState(null);
 
