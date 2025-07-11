@@ -10,6 +10,8 @@ const SignUp = ({ setUserData }) => {
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [language, setLanguage] = useState("");
+
 
   const navigate = useNavigate();
 
@@ -18,12 +20,14 @@ const SignUp = ({ setUserData }) => {
     setIsLoading(true);
 
     const newUser = {
-      name,
-      phone,
-      id_type: idType,
-      id_number: idNumber,
-      password,
+        name,
+        phone,
+        id_type: idType,
+        id_number: idNumber,
+        password,
+        language,
     };
+
 
     try {
       const res = await fetch("http://localhost:5000/api/signup", {
@@ -97,6 +101,21 @@ const SignUp = ({ setUserData }) => {
                 <option value="PAN">PAN</option>
               </select>
             </div>
+          <div className="form-group">
+            <label className="form-label" htmlFor="language">Language</label>
+            <select
+                className="form-input"
+                id="language"
+                value={language}
+                onChange={(e) => setLanguage(e.target.value)}
+                required
+            >
+                <option value="">Select Language</option>
+                <option value="English">English</option>
+                <option value="Hindi">Hindi</option>
+                <option value="Malayalam">Malayalam</option>
+            </select>
+            </div>
 
             <div className="form-group">
               <label className="form-label" htmlFor="idNumber">ID Number</label>
@@ -112,7 +131,7 @@ const SignUp = ({ setUserData }) => {
 
             <div className="form-group">
               <label className="form-label" htmlFor="password">Password</label>
-              
+
               <input
                 className="form-input"
                 id="password"
