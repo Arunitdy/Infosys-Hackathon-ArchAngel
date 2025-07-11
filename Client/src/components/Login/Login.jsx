@@ -54,7 +54,7 @@ export function LoginPage({ setUserData }) {
         <div className="login-form">
           <form onSubmit={handleSubmit}>
             <div className="form-group">
-              <label className="form-label" htmlFor="email">Email address</label>
+              <label className="form-label" htmlFor="email">Phone Number</label>
               <input
                 className="form-input"
                 id="email"
@@ -99,14 +99,14 @@ export function LoginPage({ setUserData }) {
             </button>
           </form>
 
-          <div className="divider">
+          {/* <div className="divider">
             <span className="divider-text">Or continue with</span>
           </div>
 
           <button onClick={handleGoogleSignIn} className="google-button">
             <FcGoogle className="google-icon" />
             Sign in with Google
-          </button>
+          </button> */}
             <div className="signup-link">
                 <span>Don't have an account? </span>
                 <a href="/signup" className="signup-link-text">Sign up</a>
