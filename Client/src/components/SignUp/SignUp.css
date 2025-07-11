@@ -1,3 +1,32 @@
 .signup-link {
     margin-top: 50px;
 }
+.role-toggle {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.role-toggle button {
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  border: 2px solid #007bff;
+  background-color: white;
+  color: #007bff;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.role-toggle button:hover {
+  background-color: #e6f0ff;
+}
+
+.role-toggle button.active {
+  background-color: #007bff;
+  color: white;
+}
