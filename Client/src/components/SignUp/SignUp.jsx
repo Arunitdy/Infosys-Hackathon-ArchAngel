@@ -156,6 +156,10 @@ const SignUp = ({ setUserData }) => {
               {isLoading ? "Registering..." : "Sign Up"}
             </button>
           </form>
+          <div className="signup-link">
+                <span>Already have an account?</span>
+                <a href="/" className="signup-link-text">Sign in</a>
+          </div>
         </div>
       </div>
     </div>
