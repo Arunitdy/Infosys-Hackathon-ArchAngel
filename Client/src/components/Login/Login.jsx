@@ -28,7 +28,8 @@ export function LoginPage({ setUserData }) {
       const data = await res.json();
 
       if (data.success) {
-        setUserData(data.user);              // Save user data in App
+        setUserData(data.user);  
+        console.log(data.user);            // Save user data in App
         navigate("/home");                   // Navigate to Home
       } else {
         alert("Invalid credentials.");
