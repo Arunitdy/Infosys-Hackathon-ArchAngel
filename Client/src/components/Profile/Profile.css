@@ -1,96 +1,185 @@
-/* Container Setup */
-.profile-container {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  background-color: #f3f4f6;
-  padding: 1rem;
-  box-sizing: border-box;
-}
-
-/* Card Styling */
-.profile-card {
+.profile-screen {
   width: 100%;
-  max-width: 500px;
-  background-color: #fff;
-  border-radius: 1rem;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-  overflow: hidden;
-  padding: 2rem;
-  box-sizing: border-box;
-}
-
-/* Header */
-.profile-header {
+  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f9fafb;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 2rem;
 }
 
-.profile-image {
+/* Header Section */
+.header-section {
+  width: 100%;
+  background: linear-gradient(135deg, #3b82f6, #60a5fa);
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem 1.5rem;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+
+.avatar {
   width: 100px;
   height: 100px;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid #4f46e5;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
+  border: 3px solid white;
 }
 
-.profile-name {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: #111827;
+/* Action Buttons */
+.action-bar {
+  width: 100%;
+  max-width: 1024px;
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem;
+  background: #f3f4f6;
+  flex-wrap: wrap;
 }
 
-/* Details Section */
-.profile-details {
+.action-button {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  align-items: center;
+  color: #374151;
+  font-size: 14px;
+  cursor: pointer;
+  margin: 0.5rem;
 }
 
-.profile-row {
+.action-button svg {
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+
+/* Tabs */
+.tabs {
+  width: 100%;
+  max-width: 1024px;
+  display: flex;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.tab {
+  flex: 1;
+  padding: 0.8rem;
+  text-align: center;
+  background: none;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  color: #6b7280;
+}
+
+.tab.active {
+  color: #2563eb;
+  border-bottom: 2px solid #2563eb;
+}
+
+/* Info Section */
+.info-section {
+  width: 100%;
+  max-width: 1024px;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background-color: white;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  border-radius: 16px;
+  margin-top: 1.5rem;
+}
+
+.info-row {
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid #e5e7eb;
+  font-size: 16px;
+  color: #374151;
+  border-bottom: 1px solid #f1f5f9;
   padding-bottom: 0.5rem;
 }
 
 .label {
   font-weight: 600;
-  color: #4b5563;
+  color: #475569;
 }
 
 .value {
-  color: #374151;
-  text-align: right;
   max-width: 60%;
-  word-break: break-word;
+  text-align: right;
 }
 
-/* Responsive Adjustments */
-@media (max-width: 480px) {
-  .profile-card {
-    margin-top: 0px;
-    padding: 1.5rem;
-  }
+/* Footer Buttons */
+.footer-buttons {
+  width: 100%;
+  max-width: 1024px;
+  margin: 2rem 0;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
 
-  .profile-name {
-    font-size: 1.5rem;
-  }
+.footer-buttons button {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 0.8rem;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.3s;
+  min-width: 160px;
+}
 
-  .profile-row {
+.footer-buttons .school {
+  border: 1px solid white;
+  background: #7ca4fb;
+  color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.footer-buttons .hospital {
+  border: 1px solid white;
+  background: #7bf5cc;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  color: white;
+}
+
+.footer-buttons .logout {
+  border: 1px solid white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background: #f88585;
+  color: white;
+}
+
+.footer-buttons button:hover {
+  opacity: 0.9;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .info-row {
     flex-direction: column;
     align-items: flex-start;
   }
 
-  .label,
-  .value {
-    width: 100%;
-  }
-
   .value {
     text-align: left;
+    max-width: 100%;
+  }
+
+  .footer-buttons {
+    flex-direction: column;
+  }
+
+  .footer-buttons button {
+    width: 100%;
   }
 }
