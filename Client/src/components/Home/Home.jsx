@@ -6,7 +6,7 @@ import { FaGlobe, FaHospital, FaGraduationCap, FaFileAlt, FaBalanceScale } from 
 import "./Home.css";
 
 const options = [
-  { name: "Migration Service", icon: <FaGlobe />, route: "/migration" },
+  
   { name: "Medical", icon: <FaHospital />, route: "/medical" },
   { name: "Education", icon: <FaGraduationCap />, route: "/education" },
   { name: "Documents", icon: <FaFileAlt />, route: "/documents" },
