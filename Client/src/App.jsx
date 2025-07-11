@@ -5,6 +5,9 @@ import SignUp from './components/Signup/Signup';
 import Home from './components/Home/Home';
 import Profile from './components/Profile/Profile';
 import TestPage from './components/test/test'
+import Medical from './components/Home/Medical/Medical';
+import Education from './components/Home/Education/Education';
+import Documents from './components/Home/Documents/Documents';
 
 function App() {
   const [userData, setUserData] = useState(null);
@@ -15,6 +18,7 @@ function App() {
         <Route path="/" element={<LoginPage setUserData={setUserData} />} />
         <Route path="/signup" element={<SignUp setUserData={setUserData} />} />
         <Route path="/home" element={<Home userData={userData} />} />
+        <Route path="/medical" element={<Medical userData={userData} />} />
         <Route path="/profile" element={<Profile userData={userData} />} />
         <Route path="/test" element={<TestPage />} />
       </Routes>

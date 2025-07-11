@@ -1,0 +1,58 @@
+.documents-container {
+  padding: 2rem;
+  background-color: #f4f6f9;
+  height: 100vh;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.documents-container h2 {
+  color: #007bff;
+  margin-bottom: 1rem;
+}
+
+.documents-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.document-card {
+  flex: 1 1 200px;
+  background-color: #ffffff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+  border-left: 6px solid;
+  transition: transform 0.2s ease;
+}
+
+.document-card.uploaded {
+  border-color: #28a745;
+}
+
+.document-card.pending {
+  border-color: #ffc107;
+}
+
+.document-card:hover {
+  transform: translateY(-4px);
+}
+
+.add-document-button {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 0.8rem 1rem;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-document-button:hover {
+  background-color: #0056b3;
+}

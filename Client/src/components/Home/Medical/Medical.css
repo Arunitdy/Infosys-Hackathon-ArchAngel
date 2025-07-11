@@ -1,0 +1,75 @@
+.medical-container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  padding: 2rem;
+  gap: 2rem;
+  background-color: #f4f6f8;
+  box-sizing: border-box;
+}
+
+.medical-left,
+.medical-right {
+  flex: 1;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+}
+
+.medical-left h2,
+.medical-right h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #007bff;
+}
+
+.medical-history {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.medical-history-item {
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fafafa;
+}
+
+.hospital-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.hospital-card {
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hospital-card button {
+  background-color: #28a745;
+  border: none;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.hospital-card button:hover {
+  background-color: #218838;
+}
+
+@media (max-width: 768px) {
+  .medical-container {
+    flex-direction: column;
+  }
+}

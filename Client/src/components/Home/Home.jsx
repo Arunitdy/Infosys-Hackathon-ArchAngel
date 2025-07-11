@@ -7,9 +7,8 @@ const options = [
   { name: "Migration Service", icon: "🌍" },
   { name: "Medical", icon: "🏥" },
   { name: "Education", icon: "💸" },
-  { name: "File Reports", icon: "📝" },
+  { name: "Documents", icon: "📝" },
   { name: "Legal Help", icon: "⚖️" },
-  { name: "Language Support", icon: "🗣️" },
 ];
 
 const testMenuItems = [
