@@ -58,7 +58,7 @@ const SignUp = ({ setUserData }) => {
     }
   };
 
-  
+
   return (
     <div className="login-container">
       <div className="login-content">
@@ -68,19 +68,26 @@ const SignUp = ({ setUserData }) => {
 
 
             <div className="login-form">
-                        <div className="role-toggle">
-            <button
+
+            <div className="role-toggle-wrapper">
+            <div className="role-toggle-slider">
+                <div
+                className={`slider-indicator ${role}`}
+                style={{ left: role === "migrant" ? "0%" : "50%" }}
+                ></div>
+                <button
                 className={role === "migrant" ? "active" : ""}
                 onClick={() => setRole("migrant")}
-            >
+                >
                 <FiUser /> Migrant
-            </button>
-            <button
+                </button>
+                <button
                 className={role === "firm" ? "active" : ""}
                 onClick={() => setRole("firm")}
-            >
+                >
                 <FiBriefcase /> Firm / Service Provider
-            </button>
+                </button>
+            </div>
             </div>
           <form onSubmit={handleSubmit}>
             <div className="form-group">
