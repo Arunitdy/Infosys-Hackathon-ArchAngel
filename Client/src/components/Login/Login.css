@@ -1,19 +1,57 @@
-/* Container for the entire login screen */
 .login-container {
+  width: 90%;
   min-height: 100vh;
+  background: linear-gradient(to right, #f0f4f8, #ffffff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.login-wrapper {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  overflow: hidden;
+  flex-wrap: wrap;
+}
+
+.login-left {
+  flex: 1;
+  min-width: 300px;
+  background: #2174d4;
+  color: white;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 3rem 1.5rem;
 }
 
-/* Centered content area */
+.login-left h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.login-left p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.login-left img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 2rem;
+}
+
 .login-content {
-  max-width: 28rem;
-  margin: 0 auto;
+  flex: 1;
+  min-width: 350px;
+  padding: 2rem;
 }
 
-/* Main title */
 .login-title {
   font-size: 1.875rem;
   font-weight: 800;
@@ -180,29 +218,11 @@
   font-size: 1.2rem;
 }
 
-/* Responsive tweaks */
-@media (max-width: 500px) {
-  .login-form {
-    padding: 40px 20px;
-  }
-
-  .form-input {
-    width: 100%;
-  }
-
-  .login-title {
-    font-size: 1.5rem;
-  }
-
-  .login-subtitle {
-    font-size: 1.25rem;
-  }
-}
-
 /* Mobile Responsive Styling */
 @media (max-width: 500px) {
   .login-container {
     padding: 2rem 1rem;
+    width: 100%;
   }
 
   .login-content {
@@ -226,7 +246,7 @@
   }
 
   .form-input {
-    width: 94%;
+    width: 87%;
     font-size: 1rem;
   }
 
@@ -236,14 +256,8 @@
     padding: 0.75rem;
   }
 
-  .password-checkbox {
-    font-size: 0.75rem;
-  }
-
-  .forgot-password {
-    font-size: 0.75rem;
-  }
-
+  .password-checkbox,
+  .forgot-password,
   .divider-text {
     font-size: 0.75rem;
   }
