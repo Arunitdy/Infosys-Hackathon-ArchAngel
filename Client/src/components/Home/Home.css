@@ -41,7 +41,8 @@
 }
 
 .hero-text h1 {
-  font-size: 32px;
+  font-size: 52px;
+  font-weight: bold;
   margin-bottom: 12px;
   color: #2174d4;
 }
