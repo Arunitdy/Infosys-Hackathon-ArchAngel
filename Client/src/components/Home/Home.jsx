@@ -1,19 +1,27 @@
-import React, { useState, useEffect  } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { FiMenu, FiUser, FiX } from "react-icons/fi";
-import { FaGlobe, FaHospital, FaGraduationCap, FaFileAlt, FaBalanceScale } from "react-icons/fa";
-
+import { 
+  FaGlobe, 
+  FaHospital, 
+  FaGraduationCap, 
+  FaFileAlt, 
+  FaBalanceScale,
+  FaUserFriends,  // For Buddy Connect
+  FaLandmark,     // For Government Services
+  FaMapMarkerAlt  // For Nearby Amenities
+} from "react-icons/fa";
+import axios from "axios";
 import "./Home.css";
-
 const options = [
-  
   { name: "Medical", icon: <FaHospital />, route: "/medical" },
   { name: "Education", icon: <FaGraduationCap />, route: "/education" },
   { name: "Documents", icon: <FaFileAlt />, route: "/documents" },
   { name: "Legal Help", icon: <FaBalanceScale />, route: "/services" },
+  { name: "Buddy Connect", icon: <FaUserFriends />, route: "/buddy-connect" },
+  { name: "Government Services", icon: <FaLandmark />, route: "/government" },
+  { name: "Nearby Amenities", icon: <FaMapMarkerAlt />, route: "/amenities" },
 ];
-
-
 const testMenuItems = [
   "Dashboard",
   "Notifications",
@@ -21,25 +29,60 @@ const testMenuItems = [
   "Help",
 ];
 
-const Home = ({ userData }) => {
+const Home = ({ userData, setUserData }) => {
   const [showMenu, setShowMenu] = useState(false);
   const [animatedText, setAnimatedText] = useState("");
-
+  const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
   const fullText =
     "MigrantLink is a portable digital platform empowering India's 450 million migrant workers with seamless access to essential services across state borders. It consolidates documents like Aadhaar, health records, and ration cards into a secure digital wallet, ensuring benefits follow workers wherever they go.";
 
   useEffect(() => {
+    // Typing animation effect
     let index = 0;
-    const interval = setInterval(() => {
+    const typingInterval = setInterval(() => {
       setAnimatedText(fullText.slice(0, index + 1));
       index++;
-      if (index === fullText.length) clearInterval(interval);
-    }, 30); // typing speed
+      if (index === fullText.length) clearInterval(typingInterval);
+    }, 30);
 
-    return () => clearInterval(interval);
+    // Fetch user data if not already available
+const fetchUserData = async () => {
+  try {
+    // Check if we already have userData
+    if (!userData || !userData.id) {  // Changed from user_id to id based on your API response
+      // Get user ID from localStorage or wherever it's stored
+      const userId = localStorage.getItem('userId') || 3; // Default to 3 if not found
+      
+      const response = await axios.get(`https://migrantconnect.onrender.com/api/user/${userId}`);
+      const fetchedUserData = response.data; // Renamed to avoid shadowing
+      console.log("Fetched user data:", fetchedUserData);
+      
+      // Save to state and localStorage
+      setUserData(fetchedUserData);
+      localStorage.setItem('userData', JSON.stringify(fetchedUserData));
+      
+      // This will log the data we just fetched
+      console.log("Data being set:", fetchedUserData);
+    }
+  } catch (error) {
+    console.error("Error fetching user data:", error);
+  } finally {
+    setLoading(false);
+  }
+};
+
+    fetchUserData();
+
+    return () => {
+      clearInterval(typingInterval);
+    };
   }, []);
+
+  if (loading) {
+    return <div className="loading-container">Loading user data...</div>;
+  }
 
   return (
     <div className="home-container">
@@ -70,13 +113,13 @@ const Home = ({ userData }) => {
           ))}
         </ul>
       </div>
-         {/* Hero Section */}
+
+      {/* Hero Section */}
       <div className="hero-image">
         <div className="hero-text">
-          <h1>Welcome to MigrantLink</h1>
+          <h1>Welcome {userData?.name || 'User'}</h1>
           <p className="tagline">Your rights, wherever you work.</p>
           <p className="animated-description">{animatedText}</p>
-          
         </div>
 
         <div className="hero-animation">
@@ -86,6 +129,7 @@ const Home = ({ userData }) => {
           ></iframe>
         </div>
       </div>
+
       {/* Services Grid */}
       <div className="grid-container">
         {options.map((option, index) => (

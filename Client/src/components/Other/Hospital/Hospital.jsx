@@ -23,7 +23,7 @@ const features = [
 
 const menuItems = ["Dashboard", "Notifications", "Help", "Logout"];
 
-const Hospital = () => {
+const Hospital = ({ userData, setUserData }) => {
   const [showMenu, setShowMenu] = useState(false);
   const navigate = useNavigate();
 

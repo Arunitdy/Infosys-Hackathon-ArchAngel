@@ -23,7 +23,7 @@ const features = [
 
 const menuItems = ["Dashboard", "Feedback", "Help", "Logout"];
 
-const Govt = () => {
+const Govt = ({ userData, setUserData }) => {
   const [showMenu, setShowMenu] = useState(false);
   const navigate = useNavigate();
 

@@ -1,30 +1,32 @@
 .documents-container {
   padding: 2rem;
   background-color: #f4f6f9;
-  height: 100vh;
+  min-height: 100vh;
   position: relative;
   box-sizing: border-box;
 }
 
 .documents-container h2 {
   color: #007bff;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
 }
 
 .documents-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
 .document-card {
-  flex: 1 1 200px;
+  flex: 1 1 250px;
   background-color: #ffffff;
-  padding: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   border-left: 6px solid;
-  transition: transform 0.2s ease;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .document-card.uploaded {
@@ -36,7 +38,19 @@
 }
 
 .document-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.document-card h4 {
+  margin: 0 0 0.5rem 0;
+  color: #333;
+  font-size: 1.2rem;
+}
+
+.document-card p {
+  margin: 0;
+  color: #666;
 }
 
 .add-document-button {
@@ -46,13 +60,162 @@
   background-color: #007bff;
   color: white;
   border: none;
-  padding: 0.8rem 1rem;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .add-document-button:hover {
   background-color: #0056b3;
+  transform: scale(1.1);
+}
+
+/* Popup Styles */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  position: relative;
+  animation: popIn 0.3s ease-out;
+}
+
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.close-button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #666;
+  transition: color 0.2s ease;
+}
+
+.close-button:hover {
+  color: #333;
+}
+
+.doc-details {
+  margin-top: 1.5rem;
+}
+
+.doc-details p {
+  margin: 0.8rem 0;
+  color: #555;
+}
+
+.doc-details strong {
+  color: #333;
+}
+
+.doc-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.action-button {
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.action-button.download {
+  background-color: #e9ecef;
+  color: #333;
+}
+
+.action-button.download:hover {
+  background-color: #dee2e6;
+}
+
+.action-button.replace {
+  background-color: #007bff;
+  color: white;
+}
+
+.action-button.replace:hover {
+  background-color: #0069d9;
+}
+
+/* Form Styles */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.form-group input[type="text"],
+.form-group input[type="file"] {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.form-group input[type="file"] {
+  padding: 0.5rem;
+}
+
+.upload-button {
+  background-color: #28a745;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+  margin-top: 1rem;
+}
+
+.upload-button:hover {
+  background-color: #218838;
 }

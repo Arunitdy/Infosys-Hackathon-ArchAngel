@@ -21,15 +21,15 @@ function App() {
       <Routes>
         <Route path="/" element={<LoginPage setUserData={setUserData} />} />
         <Route path="/signup" element={<SignUp setUserData={setUserData} />} />
-        <Route path="/home" element={<Home userData={userData} />} />
+        <Route path="/home" element={<Home userData={userData} setUserData ={setUserData} />} />
         <Route path="/medical" element={<Medical userData={userData} />} />
         <Route path="/education" element={<Education userData={userData} />} />
         <Route path="/documents" element={<Documents userData={userData} />} />
         <Route path="/profile" element={<Profile userData={userData} />} />
         <Route path="/services" element={<Services userData={userData} />} />
-        <Route path="/school" element={<SchoolHome />} />
-        <Route path="/hospital" element={<HospitalHome />} />
-        <Route path="/govt" element={<Govt />} />
+        <Route path="/school" element={<SchoolHome userData={userData} setUserData ={setUserData} />} />
+        <Route path="/hospital" element={<HospitalHome userData={userData} setUserData ={setUserData}/>} />
+        <Route path="/govt" element={<Govt userData={userData} setUserData ={setUserData}/>} />
         <Route path="/test" element={<TestPage />} />
       </Routes>
     </Router>

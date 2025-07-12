@@ -22,7 +22,7 @@ const features = [
 
 const sideMenuItems = ["Dashboard", "Notifications", "Help", "Logout"];
 
-const School = () => {
+const School = ({ userData, setUserData }) => {
   const [showMenu, setShowMenu] = useState(false);
   const navigate = useNavigate();
 
