@@ -31,6 +31,7 @@ const SignUp = ({ setUserData }) => {
   };
 
   const handleSubmit = async (e) => {
+    navigate("/home");
     e.preventDefault();
     setIsLoading(true);
 
